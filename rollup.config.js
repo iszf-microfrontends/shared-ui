@@ -1,3 +1,4 @@
+import alias from '@rollup/plugin-alias';
 import { babel } from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -5,6 +6,10 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
 
 import packageJson from './package.json' assert { type: 'json' };
+
+const aliases = {
+  entries: [{ find: '~', replacement: './lib' }],
+};
 
 export default {
   input: 'lib/index.ts',
@@ -21,6 +26,7 @@ export default {
     },
   ],
   plugins: [
+    alias(aliases),
     peerDepsExternal(),
     resolve(),
     commonjs(),

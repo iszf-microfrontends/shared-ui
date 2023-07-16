@@ -17,6 +17,7 @@
     "plugin:import/typescript",
     "plugin:prettier/recommended"
   ],
+  "ignorePatterns": ["*.js"],
   "plugins": ["simple-import-sort"],
   "rules": {
     "react/react-in-jsx-scope": "off",
@@ -56,5 +57,12 @@
     "import/resolver": {
       "typescript": {}
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["lib/**/*.test.{ts,tsx}"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"]
+    }
+  ]
 }
