@@ -1,5 +1,5 @@
 {
-  "name": "shared-ui",
+  "name": "@iszf-micrfrontends/shared-ui",
   "version": "1.0.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.esm.js",
