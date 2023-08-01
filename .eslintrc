@@ -6,7 +6,8 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "extends": [
     "eslint:recommended",
@@ -14,10 +15,9 @@
     "plugin:react-hooks/recommended",
     "plugin:react/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript",
     "plugin:prettier/recommended"
   ],
-  "ignorePatterns": ["*.js"],
+  "ignorePatterns": ["rollup.config.js", "jest.config.js", "dist", "storybook-static"],
   "plugins": ["simple-import-sort"],
   "rules": {
     "react/react-in-jsx-scope": "off",
@@ -60,7 +60,7 @@
   },
   "overrides": [
     {
-      "files": ["lib/**/*.test.{ts,tsx}"],
+      "files": ["src/**/*.test.{ts,tsx}"],
       "plugins": ["jest"],
       "extends": ["plugin:jest/recommended"]
     }

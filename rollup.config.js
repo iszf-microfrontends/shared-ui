@@ -8,11 +8,11 @@ import typescript from 'rollup-plugin-typescript2';
 import packageJson from './package.json' assert { type: 'json' };
 
 const aliases = {
-  entries: [{ find: '~', replacement: './lib' }],
+  entries: [{ find: '~', replacement: './src' }],
 };
 
 export default {
-  input: 'lib/index.ts',
+  input: 'src/index.ts',
   output: [
     {
       file: packageJson.main,

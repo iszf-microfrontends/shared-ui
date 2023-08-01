@@ -1,6 +1,6 @@
 export default {
   testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/lib/$1',
+    '^~/(.*)$': '<rootDir>/src/$1',
   },
 };

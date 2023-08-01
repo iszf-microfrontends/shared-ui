@@ -5,8 +5,17 @@
   "module": "dist/esm/index.esm.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
-  "repository": "git@github.com:iszf-microfrontends/shared-ui.git",
-  "author": "Sviatoslav <sviatoslavnazin@gmail.com>",
+  "author": {
+    "name": "Sviatoslav Nazin",
+    "email": "sviatoslavnazin@gmail.com"
+  },
+  "contributors": [
+    "Sviatoslav Nazin (sviatoslavnazin@gmail.com)"
+  ],
+  "repository": {
+    "url": "git+https://github.com/iszf-microfrontends/shared-ui",
+    "type": "git"
+  },
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
@@ -16,6 +25,18 @@
     "lint": "eslint . --ext ts,tsx --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.16",
+    "@mantine/hooks": "^6.0.16",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.16",
+    "@mantine/hooks": "^6.0.16",
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
@@ -63,16 +84,11 @@
     "storybook": "^7.0.27",
     "typescript": "^5.1.6"
   },
-  "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@mantine/core": "^6.0.16",
-    "@mantine/hooks": "^6.0.16",
-    "react": "^18.2.0"
+  "publishConfig": {
+    "access": "public"
   },
-  "peerDependencies": {
-    "@emotion/react": "^11.11.1",
-    "@mantine/core": "^6.0.16",
-    "@mantine/hooks": "^6.0.16",
-    "react": "^18.2.0"
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
   }
 }

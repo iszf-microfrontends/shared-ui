@@ -1,0 +1,14 @@
+node_modules
+src
+.storybook
+storybook-static
+
+.gitignore
+.prettierignore
+.prettierrc
+.eslintrc
+.npmrc
+.babelrc
+jest.config.jest
+rollup.config.js
+tsconfig.json
