@@ -1,1 +1,1 @@
-export * from './FileInputWithLoading';
+export * from './file-input';

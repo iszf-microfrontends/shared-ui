@@ -1,14 +1,19 @@
-node_modules
-src
-.storybook
-storybook-static
+node_modules/
+src/
+test/
+.husky/
+.ladle/
+coverage/
+utils/
 
 .gitignore
 .prettierignore
 .prettierrc
-.eslintrc
+.eslintrc.cjs
 .npmrc
 .babelrc
-jest.config.js
+jest.config.ts
+jest-setup.ts
 rollup.config.js
 tsconfig.json
+tsconfig.build.json

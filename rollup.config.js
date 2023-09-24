@@ -1,40 +1,48 @@
-import alias from '@rollup/plugin-alias';
+import { defineConfig } from 'rollup';
 import { babel } from '@rollup/plugin-babel';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import typescript from 'rollup-plugin-typescript2';
+import { minify } from 'rollup-plugin-esbuild';
+import dts from 'rollup-plugin-dts';
+import { DEFAULT_EXTENSIONS } from '@babel/core';
+import pkg from './package.json' assert { type: 'json' };
 
-import packageJson from './package.json' assert { type: 'json' };
+const external = [...Object.keys(pkg.peerDependencies), 'react/jsx-runtime'];
 
-const aliases = {
-  entries: [{ find: '~', replacement: './src' }],
-};
-
-export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      file: packageJson.main,
-      format: 'cjs',
-      sourcemap: true,
-    },
-    {
-      file: packageJson.module,
+export default defineConfig([
+  {
+    input: 'src/index.ts',
+    external,
+    output: [
+      {
+        file: pkg.main,
+        format: 'cjs',
+      },
+      {
+        file: pkg.module,
+        format: 'esm',
+      },
+    ],
+    plugins: [
+      nodeResolve({
+        extensions: [...DEFAULT_EXTENSIONS, '.ts', '.tsx'],
+      }),
+      commonjs(),
+      minify(),
+      babel({
+        extensions: ['.ts', '.tsx'],
+        babelHelpers: 'bundled',
+        presets: ['@babel/preset-typescript', ['@babel/preset-react', { runtime: 'automatic' }]],
+      }),
+    ],
+  },
+  {
+    input: 'src/index.ts',
+    external,
+    output: {
+      file: pkg.types,
       format: 'esm',
-      sourcemap: true,
     },
-  ],
-  plugins: [
-    alias(aliases),
-    peerDepsExternal(),
-    resolve(),
-    commonjs(),
-    babel({ babelHelpers: 'bundled' }),
-    typescript({
-      tsconfig: './tsconfig.json',
-      clean: true,
-      useTsconfigDeclarationDir: true,
-    }),
-  ],
-};
+    plugins: [dts({ respectExternal: true })],
+  },
+]);
