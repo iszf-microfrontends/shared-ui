@@ -11,9 +11,7 @@ utils/
 .prettierrc
 .eslintrc.cjs
 .npmrc
-.babelrc
 jest.config.ts
 jest-setup.ts
 rollup.config.js
 tsconfig.json
-tsconfig.build.json
