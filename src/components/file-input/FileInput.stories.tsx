@@ -1,12 +1,11 @@
-import { createStyles } from '@mantine/core';
-
 import { Story } from '@ladle/react';
+import { createStyles } from '@mantine/core';
 
 import { FileInput, FileInputProps } from './FileInput';
 
 const useStyles = createStyles({
   root: {
-    width: 300,
+    width: 420,
   },
 });
 

@@ -19,9 +19,14 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint', 'simple-import-sort'],
   rules: {
+    '@typescript-eslint/no-explicit-any': 'off',
+
     'react/react-in-jsx-scope': 'off',
 
+    'import/no-named-as-default-member': 'off',
     'import/export': 'off',
+    'import/no-named-as-default': 'off',
+    'import/newline-after-import': 'error',
 
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': [
@@ -30,7 +35,6 @@ module.exports = {
         groups: [
           ['^\\u0000'],
           ['^react'],
-          ['^@mantine'],
           ['^@?\\w'],
           ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
           ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
@@ -40,6 +44,8 @@ module.exports = {
     ],
 
     'no-console': 'warn',
+    'arrow-body-style': ['error', 'as-needed'],
+    'prefer-template': 'error',
   },
   settings: {
     react: {
