@@ -27,8 +27,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": ["prettier --write", "eslint --fix"],
-    "rollup.config.js": ["prettier --write"],
-    "{*.json,.prettierrc,.babelrc,.eslintrc}": ["prettier --write --parser json --config .prettierrc"]
+    "*.{js,cjs}": ["prettier --write"],
+    "{*.json,.prettierrc,.babelrc}": ["prettier --write --parser json --config .prettierrc"]
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
