@@ -1,6 +1,6 @@
-import { Box, FileInput as MantineFileInput, FileInputProps as MantineFileInputProps, LoadingOverlay, Text } from '@mantine/core';
+import { Box, FileInput as MantineFileInput, LoadingOverlay, Text, type FileInputProps as MantineFileInputProps } from '@mantine/core';
 
-export type FileInputProps = Omit<MantineFileInputProps, 'classNames' | 'className' | 'sx' | 'styles' | 'style'> & {
+export interface FileInputProps extends Omit<MantineFileInputProps, 'classNames' | 'className' | 'sx' | 'styles' | 'style'> {
   loading?: boolean;
   classNames?: {
     root?: string;
@@ -8,9 +8,9 @@ export type FileInputProps = Omit<MantineFileInputProps, 'classNames' | 'classNa
     error?: string;
     input?: string;
   };
-};
+}
 
-export const FileInput = ({ loading, label, error, required, classNames, ...other }: FileInputProps) => (
+export const FileInput = ({ loading, label, error, required, classNames, ...other }: FileInputProps): JSX.Element => (
   <Box className={classNames?.root}>
     {label && (
       <Text className={classNames?.label} fw={500} size="sm">

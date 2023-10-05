@@ -1,13 +1,11 @@
 node_modules/
 src/
-test/
 .husky/
 .ladle/
 coverage/
 utils/
 
 .gitignore
-.prettierignore
 .prettierrc
 .eslintrc.cjs
 .npmrc

@@ -1,7 +1,7 @@
-import { Story } from '@ladle/react';
+import { type Story } from '@ladle/react';
 import { createStyles } from '@mantine/core';
 
-import { FileInput, FileInputProps } from './FileInput';
+import { FileInput, type FileInputProps } from './FileInput';
 
 const useStyles = createStyles({
   root: {

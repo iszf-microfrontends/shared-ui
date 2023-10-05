@@ -7,7 +7,7 @@ import dts from 'rollup-plugin-dts';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 import pkg from './package.json' assert { type: 'json' };
 
-const external = [...Object.keys(pkg.peerDependencies), 'react/jsx-runtime'];
+const external = [...Object.keys(pkg.peerDependencies), 'react/jsx-runtime', '@tabler/icons-react'];
 
 export default defineConfig([
   {
