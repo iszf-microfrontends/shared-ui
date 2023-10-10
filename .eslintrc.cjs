@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   extends: ['@iszf-microfrontends/eslint-config'],
-  ignorePatterns: ['rollup.config.js'],
+  ignorePatterns: ['dist', 'coverage', '.eslintrc.cjs', 'rollup.config.js'],
   rules: {
     'import/export': 'off',
   },
